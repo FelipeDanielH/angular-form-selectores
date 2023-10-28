@@ -1,11 +1,22 @@
 <h1 class="mt-3">Selectores anidados</h1>
 <hr>
 <form [formGroup]="myForm" >
+
+  <!-- Regiones -->
   <div class="row mb-3">
     <label class="form-label"> Continente: </label>
     <select formControlName="region" class="form-control">
       <option value="">-- Seleccione Continente --</option>
-      <option value="africa">Africa</option>
+      <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+    </select>
+  </div>
+
+  <!-- Paises -->
+  <div class="row mb-3">
+    <label class="form-label"> Continente: </label>
+    <select formControlName="country" class="form-control">
+      <option value="">-- Seleccione Pais --</option>
+      <!-- <option *ngFor="let country of countries" [value]="country">{{country}}</option> -->
     </select>
   </div>
 </form>
