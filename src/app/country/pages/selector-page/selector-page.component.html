@@ -12,11 +12,11 @@
   </div>
 
   <!-- Paises -->
-  <div class="row mb-3">
+  <div class="row mb-3" *ngIf="countriesByRegion.length > 0">
     <label class="form-label"> Continente: </label>
     <select formControlName="country" class="form-control">
       <option value="">-- Seleccione Pais --</option>
-      <!-- <option *ngFor="let country of countries" [value]="country">{{country}}</option> -->
+       <option *ngFor="let country of countriesByRegion" [value]="country">{{country.name}}</option>
     </select>
   </div>
 </form>
